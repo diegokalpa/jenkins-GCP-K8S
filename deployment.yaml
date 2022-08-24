@@ -3,7 +3,7 @@ kind: Namespace
 metadata:
   name: jenkins
   labels:
-    name: jenkins
+    name: gke-jenkins
 ---
 
 apiVersion: apps/v1
