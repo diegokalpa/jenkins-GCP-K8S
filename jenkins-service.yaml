@@ -24,4 +24,4 @@ spec:
     - port: 30000
       targetPort: 8080
   selector:
-    app: gke-jenkins
+    app: jenkins
