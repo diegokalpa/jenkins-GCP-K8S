@@ -9,7 +9,7 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gke-jenkins
+  name: pod-jenkins
   namespace: jenkins
 spec:
   replicas: 2
