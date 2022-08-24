@@ -24,6 +24,11 @@ spec:
       containers:
       - name: jenkins
         image: jenkins/jenkins:lts
+        resources:
+          requests:
+            cpu: 100m
+          limits:
+            cpu: 100m
         ports:
           - name: http-port
             containerPort: 8080
