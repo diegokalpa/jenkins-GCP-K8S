@@ -59,3 +59,4 @@ jobs:
         kubectl apply -f deployment.yaml
         kubectl rollout status deployment/$DEPLOYMENT_NAME
         kubectl get services -o wide
+        kubectl apply -f jenkins-service.yaml
