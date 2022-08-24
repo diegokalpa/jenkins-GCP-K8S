@@ -3,7 +3,7 @@ kind: Namespace
 metadata:
   name: jenkins
   labels:
-    name: jenkins-ns
+    name: gke-jenkins
 ---
 
 apiVersion: apps/v1
@@ -15,11 +15,11 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: jenkins
+      app: gke-jenkins
   template:
     metadata:
       labels:
-        app: jenkins
+        app: gke-jenkins
     spec:
       containers:
       - name: jenkins
