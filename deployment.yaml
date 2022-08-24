@@ -5,25 +5,28 @@ metadata:
   labels:
     name: gke-jenkins
 ---
-
 apiVersion: apps/v1
 kind: Deployment
-metadata:  
-  name: jenkins
-  spec:  
-  replicas: 1
+metadata:
+  name: gke-jenkins
+spec:
+  replicas: 2
   selector:
-      matchLabels:
-      app: jenkins
-  strategy: {}
+    matchLabels:
+      app: gke-jenkins
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
   template:
     metadata:
       labels:
-        app: jenkins
+        app: gke-jenkins
     spec:
       containers:
-      - image: jenkins/jenkins:lts
-        name: jenkins
+      - name: jenkins
+        image: jenkins/jenkins:lts
         ports:
         - name: http-port
           containerPort: 8080
@@ -34,7 +37,11 @@ metadata:
       volumes:
       - name: jenkins-volume
         emptyDir: {}
-status: {}
+        resources:
+          requests:
+            cpu: 100m
+          limits:
+            cpu: 100m
 
 # ---
 # apiVersion: v1
