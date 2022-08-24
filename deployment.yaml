@@ -1,10 +1,10 @@
-# apiVersion: v1
-# kind: Namespace
-# metadata:
-#   name: jenkins
-#   labels:
-#     name: jenkins
-# ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: jenkins
+  labels:
+    name: jenkins
+---
 
 apiVersion: apps/v1
 kind: Deployment
@@ -15,11 +15,11 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: gke-jenkins
+      app: l-jenkins
   template:
     metadata:
       labels:
-        app: gke-jenkins
+        app: l-jenkins
     spec:
       containers:
       - name: jenkins
