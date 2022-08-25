@@ -14,7 +14,7 @@ spec:
     app: jenkins
 
 ---
-#Se crea LoadBalancer para poder acceder a Cloud desde afuera
+#Se crea LoadBalancer para poder acceder a Cloud desde afuera.
 apiVersion: v1
 kind: Service
 metadata:
